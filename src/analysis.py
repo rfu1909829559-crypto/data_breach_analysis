@@ -30,8 +30,7 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-
-#Leak by country
+#Leak by country and region
 country = df.groupby("iso3")["records_lost"].sum().reset_index()
 country = country.sort_values("records_lost", ascending=False)
 
@@ -43,7 +42,6 @@ plt.ylabel("Records Lost")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-
 
 #Leak by sector
 sector = df["sector"].value_counts()
