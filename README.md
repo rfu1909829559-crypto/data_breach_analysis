@@ -191,6 +191,7 @@ Finally, the broader distinction between **frequency-driven risk** and **scale-d
   Selected Python scripts and code snippets are included to ensure reproducibility of the analysis. These cover data preprocessing, visualization generation, and statistical summaries. The repository provides clear documentation for replicating the workflow and verifying results.  
 
 - **Supplementary figures and tables**  
+
   Additional charts and tables not included in the main text are provided to illustrate intermediate steps, robustness checks, and alternative visualizations.  
 
 - **Methodological notes**  
