@@ -9,6 +9,7 @@ df = df.drop_duplicates()
 # Group by year
 yearly = df.groupby("year")["records_lost"].sum().reset_index()
 
+
 plt.figure(figsize=(10, 5))
 plt.plot(yearly["year"], yearly["records_lost"], marker="o")
 plt.title("Total Records Lost per Year")
@@ -43,6 +44,32 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
+#Leak by country and region (inchident))
+country_count = df.groupby("iso3").size().reset_index(name="incident_count")
+country_count = country_count.sort_values("incident_count", ascending=False)
+
+plt.figure(figsize=(12, 6))
+plt.bar(country_count["iso3"], country_count["incident_count"])
+plt.title("Number of Breach Incidents per Country/Region")
+plt.xlabel("Country (ISO3)")
+plt.ylabel("Incident Count")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Leak amount by sector
+sector_amount = df.groupby("sector")["records_lost"].sum().reset_index()
+sector_amount = sector_amount.sort_values("records_lost", ascending=False)
+
+plt.figure(figsize=(12, 6))
+plt.bar(sector_amount["sector"], sector_amount["records_lost"])
+plt.title("Total Records Lost per Sector")
+plt.xlabel("Sector")
+plt.ylabel("Records Lost")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
 #Leak by sector
 sector = df["sector"].value_counts()
 
@@ -54,6 +81,10 @@ plt.ylabel("Count")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+
+
+
 
 
 import pandas as pd
@@ -91,4 +122,44 @@ usa_row.plot(
 
 plt.title("Global Data Breach Records Lost (Country and Region, USA Highlighted in Black)")
 plt.axis("off")
+plt.show()
+
+
+
+#Heatmap of Records Lost by Year and Sector
+import seaborn as sns
+
+pivot = df.pivot_table(index="year", columns="sector", values="records_lost", aggfunc="sum").fillna(0)
+plt.figure(figsize=(12,8))
+sns.heatmap(pivot, cmap="Reds", linewidths=0.5)
+plt.title("Records Lost by Year and Sector")
+plt.show()
+
+
+#Sectoral Share of Records Lost Over Time
+year_sector = df.groupby(["year","sector"])["records_lost"].sum().reset_index()
+total_per_year = year_sector.groupby("year")["records_lost"].transform("sum")
+year_sector["share"] = year_sector["records_lost"] / total_per_year
+
+
+for sector in year_sector["sector"].unique():
+    plt.plot(year_sector[year_sector["sector"]==sector]["year"],
+             year_sector[year_sector["sector"]==sector]["share"],
+             label=sector)
+plt.legend()
+plt.title("Sector Share of Records Lost Over Time")
+plt.show()
+
+
+# Sectoral Share of Incident Count Over Time
+year_sector_incidents = df.groupby(["year","sector"]).size().reset_index(name="incident_count")
+total_incidents_per_year = year_sector_incidents.groupby("year")["incident_count"].transform("sum")
+year_sector_incidents["share"] = year_sector_incidents["incident_count"] / total_incidents_per_year
+
+for sector in year_sector_incidents["sector"].unique():
+    plt.plot(year_sector_incidents[year_sector_incidents["sector"]==sector]["year"],
+             year_sector_incidents[year_sector_incidents["sector"]==sector]["share"],
+             label=sector)
+plt.legend()
+plt.title("Sector Share of Incident Count Over Time")
 plt.show()

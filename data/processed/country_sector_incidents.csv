@@ -1,0 +1,142 @@
+iso3,sector,incident_count
+ARE,finance,2
+ARE,web,2
+ARG,transport,1
+AUS,academia,2
+AUS,finance,1
+AUS,government,1
+AUS,health,1
+AUS,tech,1
+AUS,telecoms,1
+AUS,transport,1
+AUS,web,1
+AUT,finance,1
+BEL,government,1
+BEL,transport,1
+BEL,web,1
+BGR,government,1
+BRA,finance,1
+BRA,telecoms,1
+CAN,finance,2
+CAN,misc,2
+CAN,retail,2
+CAN,tech,1
+CAN,telecoms,1
+CAN,web,3
+CHE,misc,1
+CHL,government,1
+CHN,government,1
+CHN,misc,1
+CHN,retail,1
+CHN,web,5
+DEM,web,1
+DEU,finance,1
+DEU,retail,1
+DEU,telecoms,1
+DEU,transport,3
+DEU,web,6
+ESP,finance,1
+EST,government,1
+FIN,government,1
+FRA,finance,1
+FRA,gaming,1
+FRA,government,1
+FRA,health,1
+FRA,retail,2
+FRA,web,4
+GBR,finance,1
+GBR,gaming,1
+GBR,government,8
+GBR,health,2
+GBR,misc,2
+GBR,retail,9
+GBR,"tech, web",1
+GBR,telecoms,5
+GBR,transport,3
+GBR,web,6
+GRC,government,1
+HKG,government,1
+HKG,transport,1
+HKG,web,1
+IDN,government,1
+IDN,misc,1
+IDN,telecoms,1
+IND,government,1
+IND,misc,1
+IND,transport,4
+IND,web,2
+IRL,transport,1
+IRN,finance,1
+ISL,gaming,1
+ISL,web,1
+ISR,finance,1
+ISR,government,1
+ISR,tech,1
+ISR,web,2
+ITA,telecoms,1
+ITA,web,1
+JPN,finance,1
+JPN,gaming,4
+JPN,government,1
+JPN,retail,2
+JPN,tech,1
+JPN,"tech, web",1
+JPN,telecoms,1
+JPN,transport,3
+JPN,web,2
+KOR,finance,1
+KOR,misc,1
+KOR,tech,1
+KOR,telecoms,1
+KOR,web,3
+LKA,finance,1
+LTU,tech,1
+MYS,health,1
+MYS,telecoms,1
+NLD,government,1
+NOR,government,1
+PAK,telecoms,1
+PAN,misc,1
+PHL,retail,1
+ROM,telecoms,1
+RUS,retail,1
+RUS,web,5
+SGP,health,1
+SPE,gaming,1
+SPE,telecoms,1
+SPE,web,3
+SRB,government,1
+SVK,web,1
+SWE,gaming,1
+SWE,government,1
+SWE,web,1
+SYR,government,1
+THA,government,1
+TUR,finance,1
+TUR,government,1
+TWN,tech,4
+USA,academia,13
+USA,finance,33
+USA,"finance, health",1
+USA,gaming,10
+USA,government,25
+USA,"government, health",1
+USA,"government, military",1
+USA,health,45
+USA,military,4
+USA,"military, health",1
+USA,misc,8
+USA,"misc, health",1
+USA,retail,32
+USA,tech,25
+USA,"tech, health",1
+USA,"tech, retail",2
+USA,"tech, web",3
+USA,telecoms,13
+USA,transport,8
+USA,web,94
+USA,"web, gaming",1
+USA,"web, military",1
+USA,"web, tech",2
+ZAF,transport,1
+ZAF,web,1
